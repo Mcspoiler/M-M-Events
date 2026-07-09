@@ -1,0 +1,6 @@
+{
+  "name": "M&M Events",
+  "description": "Premium event hosting and milestone planning platform by M&M Events, featuring a live planning sandbox, event configuration tools, and seamless KSh budget estimates.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
