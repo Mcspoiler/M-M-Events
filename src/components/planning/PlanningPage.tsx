@@ -2,7 +2,6 @@ import PlanningHero from './PlanningHero';
 import Checklist from './Checklist';
 import BudgetPlanner from './BudgetPlanner';
 import Timeline from './Timeline';
-import GuestManager from './GuestManager';
 import VendorDirectory from './VendorDirectory';
 
 export default function PlanningPage() {
@@ -40,18 +39,10 @@ export default function PlanningPage() {
               <Timeline />
             </div>
 
-            {/* Guest & Vendor Section */}
+            {/* Vendor Section */}
             <div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Guest List</h3>
-                  <GuestManager />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Vendors</h3>
-                  <VendorDirectory />
-                </div>
-              </div>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Vendors & Services</h3>
+              <VendorDirectory />
             </div>
 
           </div>

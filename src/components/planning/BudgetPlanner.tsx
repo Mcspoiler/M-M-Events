@@ -10,7 +10,7 @@ export default function BudgetPlanner() {
   const [budget, setBudget] = useState<BudgetCategory[]>(mockBudgetCategories);
   const [newCategory, setNewCategory] = useState('');
   const [newAmount, setNewAmount] = useState('');
-  const [budgetLimit, setBudgetLimit] = useState(20000);
+  const [budgetLimit, setBudgetLimit] = useState(2000000); // KES
 
   const totalBudget = budget.reduce((sum, cat) => sum + cat.amount, 0);
   const remaining = budgetLimit - totalBudget;
@@ -77,7 +77,7 @@ export default function BudgetPlanner() {
                 cx="50%"
                 cy="50%"
                 labelLine={false}
-                label={({ name, value }) => `${name}: $${value.toLocaleString()}`}
+                label={({ name, value }) => `${name}: KES ${value.toLocaleString()}`}
                 outerRadius={80}
                 fill="#8884d8"
                 dataKey="value"
@@ -86,7 +86,7 @@ export default function BudgetPlanner() {
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip formatter={(value) => `$${value.toLocaleString()}`} />
+              <Tooltip formatter={(value) => `KES ${value.toLocaleString()}`} />
               <Legend />
             </PieChart>
           </ResponsiveContainer>
@@ -98,13 +98,13 @@ export default function BudgetPlanner() {
             <div className="space-y-3">
               <div>
                 <p className="text-xs text-amber-700 font-semibold uppercase">Total Budget</p>
-                <p className="text-3xl font-bold text-amber-900">${budgetLimit.toLocaleString()}</p>
+                <p className="text-3xl font-bold text-amber-900">KES {budgetLimit.toLocaleString()}</p>
               </div>
               
               <div className="border-t border-amber-200 pt-3">
                 <p className="text-xs text-amber-600 font-medium flex justify-between mb-2">
                   <span>Total Spent</span>
-                  <span className="font-bold">${totalBudget.toLocaleString()}</span>
+                  <span className="font-bold">KES {totalBudget.toLocaleString()}</span>
                 </p>
                 <div className="w-full bg-amber-100 rounded-full h-2 overflow-hidden">
                   <div 
@@ -120,7 +120,7 @@ export default function BudgetPlanner() {
                   <div>
                     <p className="text-xs text-amber-700 font-semibold">Remaining</p>
                     <p className={`text-2xl font-bold ${remaining >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                      ${remaining.toLocaleString()}
+                      KES {remaining.toLocaleString()}
                     </p>
                   </div>
                   {remaining < 0 && (
@@ -169,9 +169,9 @@ export default function BudgetPlanner() {
                 type="number"
                 value={item.amount}
                 onChange={(e) => updateAmount(idx, parseFloat(e.target.value) || 0)}
-                className="w-20 px-2 py-1 border border-slate-200 rounded text-xs focus:outline-none focus:border-amber-500"
+                className="w-24 px-2 py-1 border border-slate-200 rounded text-xs focus:outline-none focus:border-amber-500"
               />
-              <span className="text-xs text-slate-600 font-medium">$</span>
+              <span className="text-xs text-slate-600 font-medium">KES</span>
               <button
                 onClick={() => removeBudgetItem(idx)}
                 className="opacity-0 group-hover:opacity-100 transition-opacity p-1 hover:bg-red-50 rounded"

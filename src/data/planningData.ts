@@ -16,13 +16,13 @@ export const mockChecklistItems: ChecklistItem[] = [
 ];
 
 export const mockBudgetCategories: BudgetCategory[] = [
-  { category: 'Venue', amount: 5000, percentage: 25 },
-  { category: 'Catering', amount: 6000, percentage: 30 },
-  { category: 'Decor & Flowers', amount: 3000, percentage: 15 },
-  { category: 'Photography', amount: 2500, percentage: 12.5 },
-  { category: 'Entertainment', amount: 2000, percentage: 10 },
-  { category: 'Transportation', amount: 1000, percentage: 5 },
-  { category: 'Miscellaneous', amount: 500, percentage: 2.5 },
+  { category: 'Venue', amount: 500000, percentage: 25 },
+  { category: 'Catering', amount: 600000, percentage: 30 },
+  { category: 'Decor & Flowers', amount: 300000, percentage: 15 },
+  { category: 'Photography', amount: 250000, percentage: 12.5 },
+  { category: 'Entertainment', amount: 200000, percentage: 10 },
+  { category: 'Transportation', amount: 100000, percentage: 5 },
+  { category: 'Miscellaneous', amount: 50000, percentage: 2.5 },
 ];
 
 export const mockTimeline: TimelineMilestone[] = [
